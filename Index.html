@@ -1,3 +1,26 @@
-<p>This is a new Repo.</p>
-<p>This a New Feature.</p>
-<p>This is a recent Feature</p>
+<h1>Application Control Panel</h1>
+<div id="controls">
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+</div>
+
+<script>
+// Next gen mode - Restart and Shutdown features removed
+// Legacy mode features that were removed:
+// - Restart button functionality
+// - Shutdown button functionality
+
+const isNextGenMode = true;
+
+document.getElementById('startBtn').addEventListener('click', function() {
+  console.log('Application started');
+});
+
+document.getElementById('stopBtn').addEventListener('click', function() {
+  if (!isNextGenMode) {
+    console.log('Application will shutdown');
+  } else {
+    console.log('Application stopped (graceful shutdown in next gen mode)');
+  }
+});
+</script>
